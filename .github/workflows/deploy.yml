@@ -3,7 +3,7 @@ name: Deploy to EC2
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   deploy:
@@ -37,5 +37,4 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            sudo cp /home/ubuntu/target/*.war /var/lib/tomcat10/webapps/
-            sudo systemctl restart tomcat10
+            sudo find /home/ubuntu -name "*.war"
