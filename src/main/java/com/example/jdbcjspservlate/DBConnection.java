@@ -12,8 +12,8 @@ public class DBConnection {
 
     static final String DRIVER = "com.mysql.cj.jdbc.Driver";
     static final String URL    = "jdbc:mysql://localhost:3306/studentdb";
-    static final String USER   = "root";
-    static final String PASS   = "abhrabca";
+    static final String USER   = "studentuser";
+    static final String PASS   = "student123";
 
     /**
      * Gets a connection to the database
