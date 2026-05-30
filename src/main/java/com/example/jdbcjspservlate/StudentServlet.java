@@ -111,9 +111,9 @@ public class StudentServlet extends HttpServlet {
         boolean success = StudentDAO.insertStudent(student);
 
         if (success) {
-            response.sendRedirect("student?action=list");
+            response.sendRedirect(request.getContextPath() + "/student?action=list");
         } else {
-            response.sendRedirect("student-form.jsp?error=Failed to add student");
+            response.sendRedirect(request.getContextPath() + "/student-form.jsp?error=Failed to add student");
         }
     }
 
@@ -130,9 +130,9 @@ public class StudentServlet extends HttpServlet {
         boolean success = StudentDAO.updateStudent(id, name, age, email);
 
         if (success) {
-            response.sendRedirect("student?action=list");
+            response.sendRedirect(request.getContextPath() + "/student?action=list");
         } else {
-            response.sendRedirect("student?action=edit&id=" + id + "&error=Failed to update");
+            response.sendRedirect(request.getContextPath() + "/student?action=edit&id=" + id + "&error=Failed to update");
         }
     }
 
@@ -145,9 +145,9 @@ public class StudentServlet extends HttpServlet {
         boolean success = StudentDAO.deleteStudent(id);
 
         if (success) {
-            response.sendRedirect("student?action=list");
+            response.sendRedirect(request.getContextPath() + "/student?action=list");
         } else {
-            response.sendRedirect("student?action=list&error=Failed to delete student");
+            response.sendRedirect(request.getContextPath() + "/student?action=list&error=Failed to delete student");
         }
     }
 }
