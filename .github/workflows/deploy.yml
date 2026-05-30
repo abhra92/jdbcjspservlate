@@ -20,7 +20,7 @@ jobs:
           java-version: 21
 
       - name: Build WAR
-        run: ./mvnw clean package
+        run: mvn clean package
 
       - name: Upload WAR to EC2
         uses: appleboy/scp-action@v0.1.7
